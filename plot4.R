@@ -1,6 +1,7 @@
 getdata <- function(){
     # set path
-    setwd("C:/Users/msgsxj/Desktop/coursera/Exploratory Data Analysis/ExData_Plotting1")
+    rootpath = "C:/Users/msgsxj/Desktop/coursera/Exploratory Data Analysis/ExData_Plotting1"
+    setwd(rootpath)
     
     # get data
     ## create data folder
@@ -47,7 +48,7 @@ getdata <- function(){
     data$Time <- strptime(data$Time, "%d/%m/%Y %H:%M:%S")
     
     # get back to the root path
-    setwd("C:/Users/msgsxj/Desktop/coursera/Exploratory Data Analysis/ExData_Plotting1")
+    setwd(rootpath)
     return(data)
 }
 
@@ -55,18 +56,18 @@ plot4 <- function(){
     data <- getdata()
     png("plot4.png", bg = "transparent", width = 480, height = 480)
     par(mfcol = c(2, 2))
-    with(airquality, {
+    with(data, {
         # 1
-        with(data, plot(Time, Global_active_power, type = 'l', ylab = 'Global Active Power', xlab = ''))
+        plot(Time, Global_active_power, type = 'l', ylab = 'Global Active Power', xlab = '')
         # 2
-        with(data, plot(Time, Sub_metering_1, type = 'l', col = 'black', xlab = '', ylab = 'Energy sub metering'))
-        with(data, lines(Time, Sub_metering_2, type = 'l', col = 'red'))
-        with(data, lines(Time, Sub_metering_3, type = 'l', col = 'blue'))
+        plot(Time, Sub_metering_1, type = 'l', col = 'black', xlab = '', ylab = 'Energy sub metering')
+        lines(Time, Sub_metering_2, type = 'l', col = 'red')
+        lines(Time, Sub_metering_3, type = 'l', col = 'blue')
         legend("topright", lty = 1, col = c('black', 'red', 'blue'), legend = c('Sub_metering_1', 'Sub_metering_2', 'Sub_metering_3'), bty = "n")
         # 3
-        with(data, plot(Time, Voltage, type = 'l', ylab = 'Voltage', xlab = 'datetime'))
+        plot(Time, Voltage, type = 'l', ylab = 'Voltage', xlab = 'datetime')
         # 4
-        with(data, plot(Time, Global_reactive_power, type = 'l', ylab = 'Global_reactive_power', xlab = 'datetime'))
+        plot(Time, Global_reactive_power, type = 'l', ylab = 'Global_reactive_power', xlab = 'datetime')
     })
     dev.off()
 }

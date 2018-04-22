@@ -1,13 +1,13 @@
 # A short guide
 ## code
-there are four code files, and each R file contains a getdata function and a plot function:
+There are four code files, and each R file contains a getdata function and a plot function:
  - plot1.R contains 2 functions: getdata() and plot1()
  - plot2.R contains 2 functions: getdata() and plot2()
  - plot3.R contains 2 functions: getdata() and plot3()
  - plot4.R contains 2 functions: getdata() and plot4()
 
 ### get data
-the getdata funtions are exactly the same and it has 3 main ideas:
+The getdata funtions are exactly the same and it has 3 main ideas:
  1. for the purpose of saving memory, it reads the txt file line by line
  2. then create a csv containing needed data
  3. finally it return a variable named data containing needed data
@@ -68,7 +68,7 @@ getdata <- function(){
 }
 ```
 ### get plots
-you should run the code followed to get the png files.
+After changing line 3 rootpath to yours, should run the code followed to get the png files.
 ``` R
 source("plot1.R")
 source("plot2.R")
@@ -79,8 +79,13 @@ plot2()
 plot3()
 plot4()
 ```
+And when it's done, you will find there is a folder named data,containing:
+ - household_power_consumption.zip(provided by course)
+ - household_power_consumption.txt(unzip from .zip)
+ - data_selected.csv(selected from .txt)
+
 ## plots
-The four plots that you will need to construct are shown below.
+The four plots from the code are as followed:
 
 
 ### plot 1

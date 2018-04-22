@@ -1,6 +1,7 @@
 getdata <- function(){
     # set path
-    setwd("C:/Users/msgsxj/Desktop/coursera/Exploratory Data Analysis/ExData_Plotting1")
+    rootpath = "C:/Users/msgsxj/Desktop/coursera/Exploratory Data Analysis/ExData_Plotting1"
+    setwd(rootpath)
     
     # get data
     ## create data folder
@@ -47,7 +48,7 @@ getdata <- function(){
     data$Time <- strptime(data$Time, "%d/%m/%Y %H:%M:%S")
     
     # get back to the root path
-    setwd("C:/Users/msgsxj/Desktop/coursera/Exploratory Data Analysis/ExData_Plotting1")
+    setwd(rootpath)
     return(data)
 }
 
