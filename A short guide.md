@@ -108,4 +108,4 @@ The four plots from the code are as followed:
 
 ![plot4](plot4.png)
 
-## want more details see READ.md
+## want more details see README.md
